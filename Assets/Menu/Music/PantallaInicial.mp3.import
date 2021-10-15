@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PantallaInicial.mp3-8c749f0eee5f5b696a6130c7ea3513ad.mp3str"
+
+[deps]
+
+source_file="res://Assets/Menu/Music/PantallaInicial.mp3"
+dest_files=[ "res://.import/PantallaInicial.mp3-8c749f0eee5f5b696a6130c7ea3513ad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
