@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Levels/One/Sprites/tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/GUI/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Characters/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Levels/One/Sprites/backgrounda7.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Levels/One/Sprites/backgrounda5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Levels/One/Sprites/backgrounda6.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Levels/One/Sprites/backgrounda3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Levels/One/Sprites/backgrounda2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Levels/One/Sprites/backgrounda4.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Levels/One/Music/Pieza2.mp3" type="AudioStream" id=10]
 
 [node name="Level1" type="Node2D"]
 
@@ -16,3 +23,63 @@ tile_data = PoolIntArray( 2424832, 0, 0, 2424833, 0, 0, 2424834, 0, 0, 2424835, 
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 133.342, 558.765 )
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1211, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer"]
+scale = Vector2( 1.2109, 1.2109 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.2, 1 )
+motion_mirroring = Vector2( 1211, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer2"]
+scale = Vector2( 1.211, 1.211 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1211, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer3"]
+scale = Vector2( 1.211, 1.211 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.4, 1 )
+motion_mirroring = Vector2( 1211, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer4"]
+scale = Vector2( 1.211, 1.211 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 1211, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer5"]
+scale = Vector2( 1.211, 1.211 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="Background"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1211, 0 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer6"]
+scale = Vector2( 1.211, 1.211 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true

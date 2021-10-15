@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const SPEED = 128
+const SPEED = 256
 const FLOOR = Vector2(0, -1)
 const GRAVITY = 16
-const JUMP_HEIGHT = 384
+const JUMP_HEIGHT = 450
 onready var motion = Vector2.ZERO
 
 
@@ -42,7 +42,7 @@ func motion_ctrl():
 			#$Idle.play()
 		
 		if Input.is_action_just_pressed("ui_accept"):
-			#$Jump.play()
+			$Jump.play()
 			motion.y -= JUMP_HEIGHT
 	else:
 		if motion.y < 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Characters/Player/Sprites/Run/animation2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Characters/Player/Sprites/Run/animation3.png" type="Texture" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://Assets/Characters/Player/Sprites/Run/animation6.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Characters/Player/Sprites/Run/animation1.png" type="Texture" id=6]
 [ext_resource path="res://Player.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Characters/Player/Sounds/Pasos2.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Characters/Player/Sounds/Brinco.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Characters/Player/Sounds/Pasos_Sincronizados.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -39,4 +40,7 @@ position = Vector2( -13.0961, -59.1307 )
 shape = SubResource( 2 )
 
 [node name="Run" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
