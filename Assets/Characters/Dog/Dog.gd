@@ -21,9 +21,9 @@ func motion_ctrl():
 	motion.y += GRAVITY
 	
 	if get_axis().x == 1:
-		$AnimatedSprite.flip_h = false
-	elif get_axis().x == -1:
 		$AnimatedSprite.flip_h = true
+	elif get_axis().x == -1:
+		$AnimatedSprite.flip_h = false
 	
 	if get_axis().x != 0:
 		motion.x =  get_axis().x * SPEED
@@ -35,19 +35,20 @@ func motion_ctrl():
 			$AnimatedSprite.play("Run")
 			if (Input.is_action_pressed("ui_left") || Input.is_action_pressed("ui_right") ):
 				if(not $Run.is_playing()):
+					$Sit.stop()
 					$Run.play()
 		else:
-			$AnimatedSprite.play("Idle")
+			$AnimatedSprite.play("Sit")
 			$Run.stop()
-			#$Idle.play()
+			
 		
 		if Input.is_action_just_pressed("ui_accept"):
-			$Jump.play()
+			$Sit.play()
 			motion.y -= JUMP_HEIGHT
 	else:
 		if motion.y < 0:
-			$AnimatedSprite.play("Jump")
+			$AnimatedSprite.play("Run")#JUMP
 		else:
-			$AnimatedSprite.play("Fall")
+			$AnimatedSprite.play("Run")#FALL
 	
 	motion = move_and_slide(motion, FLOOR)

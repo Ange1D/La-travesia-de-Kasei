@@ -1,0 +1,54 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Run/Run4.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Sit/Sit2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Run/Run3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Sit/Sit3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Sit/Sit4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Run/Run1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Sit/Sit1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Characters/Dog/Sprites/Run/Run2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Dog/Dog.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Characters/Dog/Sounds/Perro_Ladridos_2.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Characters/Dog/Sounds/Perro_Jadeo.wav" type="AudioStream" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Sit",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 43.0046, 27.148 )
+
+[node name="Dog" type="KinematicBody2D"]
+script = ExtResource( 9 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -40.8361, -2.00226 )
+frames = SubResource( 1 )
+animation = "Sit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -43.1614, -27.6619 )
+shape = SubResource( 2 )
+
+[node name="Run" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -12.0
+
+[node name="Sit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -15.0

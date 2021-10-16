@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Levels/One/Sprites/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/GUI/Camera.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Levels/One/Sprites/backgrounda2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Levels/One/Sprites/backgrounda4.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Levels/One/Music/Pieza2.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Characters/Dog/Dog.tscn" type="PackedScene" id=11]
 
 [node name="Level1" type="Node2D"]
 
@@ -22,8 +23,8 @@ tile_data = PoolIntArray( 65535, 2, 34, 151, 2, 327686, 152, 2, 393256, 153, 2, 
 [node name="Camera" parent="." instance=ExtResource( 2 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 133.342, 351.765 )
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 133.342, 311.765 )
+scale = Vector2( 1.25, 1.25 )
 
 [node name="Background" type="ParallaxBackground" parent="."]
 
@@ -85,3 +86,7 @@ centered = false
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="Dog" parent="." instance=ExtResource( 11 )]
+position = Vector2( 240.416, 380.423 )
+scale = Vector2( 0.75, 0.75 )

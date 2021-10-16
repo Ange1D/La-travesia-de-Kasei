@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle1.png-f16a5858aba8281df4f63b16b1724581.stex"
+path="res://.import/Run4.png-de5f94a0bd89bd3d851e07c9ce74328f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Player/Sprites/Idle/Idle1.png"
-dest_files=[ "res://.import/Idle1.png-f16a5858aba8281df4f63b16b1724581.stex" ]
+source_file="res://Assets/Characters/Dog/Sprites/Run/Run4.png"
+dest_files=[ "res://.import/Run4.png-de5f94a0bd89bd3d851e07c9ce74328f.stex" ]
 
 [params]
 
