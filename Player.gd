@@ -37,7 +37,7 @@ func motion_ctrl():
 				if(not $Run.is_playing()):
 					$Run.play()
 		else:
-			$AnimatedSprite.play("Run")
+			$AnimatedSprite.play("Idle")
 			$Run.stop()
 			#$Idle.play()
 		

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/animation6.png-16eab8f3aae0be1d2f72f8af7e3f676b.stex"
+path="res://.import/Sit3.png-6f7d9e0dab3f222f106186ac54cd62f5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Player/Sprites/Run/animation6.png"
-dest_files=[ "res://.import/animation6.png-16eab8f3aae0be1d2f72f8af7e3f676b.stex" ]
+source_file="res://Assets/Characters/Dog/Sprites/Sit/Sit3.png"
+dest_files=[ "res://.import/Sit3.png-6f7d9e0dab3f222f106186ac54cd62f5.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
