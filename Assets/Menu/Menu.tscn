@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Menu/btn_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Menu/Menu.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Menu/normal_dynamicfont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Menu/title_dynamicfont.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Assets/Menu/Music/PantallaInicial.mp3" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Menu/Sprite/Pantalla_inicio.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menu/Sprite/boton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Menu/Music/IniciarPartida.wav" type="AudioStream" id=8]
+
+[sub_resource type="CanvasItemMaterial" id=1]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -20,9 +25,13 @@ volume_db = -10.0
 autoplay = true
 
 [node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 1 )
+scale = Vector2( 1.37918, 1.37918 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -37,14 +46,14 @@ __meta__ = {
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 margin_right = 1015.0
-margin_bottom = 103.0
+margin_bottom = 64.0
 custom_fonts/font = ExtResource( 4 )
 text = "La travesiía de Kaseií"
 
 [node name="Start" type="Button" parent="VBoxContainer"]
-margin_top = 107.0
+margin_top = 68.0
 margin_right = 1015.0
-margin_bottom = 177.0
+margin_bottom = 138.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_hover = Color( 1, 0.564706, 0.384314, 1 )
 text = "Comenzar"
@@ -54,15 +63,33 @@ flat = true
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -32.0
+margin_top = -39.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Footer" type="Label" parent="MarginContainer"]
 margin_right = 1024.0
-margin_bottom = 32.0
+margin_bottom = 39.0
 custom_fonts/font = ExtResource( 3 )
 text = "GAME JAM VIRTUAL DIA DE MUERTOS 2021"
 
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 390.617
+margin_top = 429.903
+margin_right = 586.617
+margin_bottom = 476.903
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioBtn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Levels/One/Sprites/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/GUI/Camera.tscn" type="PackedScene" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Assets/Characters/Dog/Dog.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Levels/One/Water2D.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/GUI/GUI.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Characters/Level/G1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Characters/Level/Objects/Objects.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Characters/Level/Objects/ovalo.png" type="Texture" id=17]
 
 [node name="Level1" type="Node2D"]
 
@@ -103,3 +106,17 @@ position = Vector2( -145, 0 )
 scale = Vector2( 3.5, 1 )
 
 [node name="GUI" parent="." instance=ExtResource( 13 )]
+
+[node name="Area2D" parent="." instance=ExtResource( 14 )]
+position = Vector2( 3116.43, 261.305 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( 2191.94, 564.562 )
+texture = ExtResource( 17 )
+texture_scale = 1.57
+energy = 0.85
+
+[node name="Objects" parent="." instance=ExtResource( 15 )]
+position = Vector2( 2202.62, 565.013 )
+scale = Vector2( 0.75, 0.75 )

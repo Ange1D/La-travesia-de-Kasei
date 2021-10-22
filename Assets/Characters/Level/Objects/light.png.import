@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fondo2.PNG-1b7d986605831e4c7dde7f6c9fb5590a.stex"
+path="res://.import/light.png-76c9ed66c8ec2a253cc32963dc5a26d7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu/Sprite/fondo2.PNG"
-dest_files=[ "res://.import/fondo2.PNG-1b7d986605831e4c7dde7f6c9fb5590a.stex" ]
+source_file="res://Assets/Characters/Level/Objects/light.png"
+dest_files=[ "res://.import/light.png-76c9ed66c8ec2a253cc32963dc5a26d7.stex" ]
 
 [params]
 

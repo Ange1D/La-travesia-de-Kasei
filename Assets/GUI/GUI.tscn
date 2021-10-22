@@ -1,10 +1,13 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=37 format=2]
 
-[ext_resource path="res://Assets/Menu/normal_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Menu/title_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/GUI/Sprites/barTime2.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GUI/Sprites/barTime.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GUI/GUI.gd" type="Script" id=4]
 [ext_resource path="res://Assets/GUI/Sprites/sheet_numers.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GUI/Fonts/timeout.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/Menu/btn_dynamicfont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Characters/Level/Objects/01.png" type="Texture" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -114,6 +117,38 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 20, 60 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 8 )
+region = Rect2( 20, 0, 20, 60 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 8 )
+region = Rect2( 40, 0, 20, 60 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 8 )
+region = Rect2( 60, 0, 20, 60 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 8 )
+region = Rect2( 80, 0, 20, 60 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 8 )
+region = Rect2( 100, 0, 20, 60 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 4 )
 
@@ -122,13 +157,22 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = 112.0
 margin_bottom = 32.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-margin_bottom = 32.0
+margin_right = 192.0
+margin_bottom = 64.0
 custom_fonts/font = ExtResource( 1 )
+text = "NIVEL"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="HBoxContainer"]
+position = Vector2( 234.39, 24.1062 )
+scale = Vector2( 0.614876, 0.614876 )
+frames = SubResource( 21 )
+frame = 1
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 anchor_left = 0.5
@@ -147,9 +191,65 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 629.982, 39.5668 )
-scale = Vector2( 0.639876, 0.639876 )
-frames = SubResource( 21 )
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -471.5
+margin_top = -51.5
+margin_right = 471.5
+margin_bottom = 51.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 943.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 6 )
+text = "Se termino el tiepo"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 107.0
+margin_right = 943.0
+margin_bottom = 177.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color_hover = Color( 0.941176, 0.780392, 0.34902, 1 )
+text = "Reintentar"
+flat = true
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 181.0
+margin_right = 943.0
+margin_bottom = 251.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color_hover = Color( 0.941176, 0.780392, 0.34902, 1 )
+text = "Menu Principal"
+flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -279.5
+margin_top = -20.0
+margin_right = 279.5
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="VBoxContainer2"]
+position = Vector2( 572.848, -245.888 )
+frames = SubResource( 28 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]

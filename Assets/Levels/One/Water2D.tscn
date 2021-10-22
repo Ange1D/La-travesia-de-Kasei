@@ -30,7 +30,7 @@ shape = SubResource( 1 )
 modulate = Color( 1, 1, 1, 0.623529 )
 position = Vector2( 501.835, 466.899 )
 frames = SubResource( 2 )
-frame = 2
+frame = 3
 playing = true
 
 [connection signal="body_entered" from="." to="." method="_on_Water2D_body_entered"]

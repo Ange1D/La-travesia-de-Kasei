@@ -16,6 +16,7 @@ func _physics_process(delta):
 func _on_Water2D_body_entered(body):
 	if body.is_in_group("Player"):
 		agua=true
+		#velocidad global
 		
 		#$AnimatedSprite.play("default")
 
