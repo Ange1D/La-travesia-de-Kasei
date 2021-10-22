@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Assets/Menu/title_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/GUI/Sprites/barTime2.png" type="Texture" id=2]
@@ -7,7 +7,11 @@
 [ext_resource path="res://Assets/GUI/Sprites/sheet_numers.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GUI/Fonts/timeout.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Assets/Menu/btn_dynamicfont.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Assets/Characters/Level/Objects/01.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Level/Objects/Guanengo.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Characters/Level/Objects/Lanza_.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Characters/Level/Objects/Xolo.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Characters/Level/Objects/Huaraches_Bronce.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GUI/Sounds/Perder.wav" type="AudioStream" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -117,38 +121,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 8 )
-region = Rect2( 0, 0, 20, 60 )
-
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 8 )
-region = Rect2( 20, 0, 20, 60 )
-
-[sub_resource type="AtlasTexture" id=24]
-atlas = ExtResource( 8 )
-region = Rect2( 40, 0, 20, 60 )
-
-[sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 8 )
-region = Rect2( 60, 0, 20, 60 )
-
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 8 )
-region = Rect2( 80, 0, 20, 60 )
-
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 8 )
-region = Rect2( 100, 0, 20, 60 )
-
-[sub_resource type="SpriteFrames" id=28]
-animations = [ {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 4 )
 
@@ -233,7 +205,6 @@ text = "Menu Principal"
 flat = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -246,9 +217,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="VBoxContainer2"]
-position = Vector2( 572.848, -245.888 )
-frames = SubResource( 28 )
+[node name="Sprite" type="Sprite" parent="VBoxContainer2"]
+visible = false
+position = Vector2( 436.46, -244.867 )
+scale = Vector2( 0.378591, 0.378591 )
+texture = ExtResource( 10 )
+
+[node name="Sprite2" type="Sprite" parent="VBoxContainer2"]
+visible = false
+position = Vector2( 495.946, -245.557 )
+scale = Vector2( 0.373645, 0.181129 )
+texture = ExtResource( 9 )
+
+[node name="Sprite3" type="Sprite" parent="VBoxContainer2"]
+visible = false
+position = Vector2( 555.684, -231.413 )
+scale = Vector2( 0.310932, 0.310932 )
+texture = ExtResource( 11 )
+
+[node name="Sprite4" type="Sprite" parent="VBoxContainer2"]
+visible = false
+position = Vector2( 621.825, -242.6 )
+scale = Vector2( 0.366667, 0.366667 )
+texture = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

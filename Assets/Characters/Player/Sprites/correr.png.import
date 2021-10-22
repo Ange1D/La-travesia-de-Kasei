@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/finale_Sheet.png-184d5bb393ec8086c933ca2095fd26a5.stex"
+path="res://.import/correr.png-96f55adef083c18d185c4298c762e612.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Player/Sprites/finale_Sheet.png"
-dest_files=[ "res://.import/finale_Sheet.png-184d5bb393ec8086c933ca2095fd26a5.stex" ]
+source_file="res://Assets/Characters/Player/Sprites/correr.png"
+dest_files=[ "res://.import/correr.png-96f55adef083c18d185c4298c762e612.stex" ]
 
 [params]
 

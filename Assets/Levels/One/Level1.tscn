@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Levels/One/Sprites/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/GUI/Camera.tscn" type="PackedScene" id=2]
@@ -15,9 +15,13 @@
 [ext_resource path="res://Assets/GUI/GUI.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Assets/Characters/Level/G1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Characters/Level/Objects/Objects.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/Levels/One/Level1.gd" type="Script" id=16]
 [ext_resource path="res://Assets/Characters/Level/Objects/ovalo.png" type="Texture" id=17]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" groups=[
+"Nivel",
+]]
+script = ExtResource( 16 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -94,8 +98,8 @@ stream = ExtResource( 10 )
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 220.342, 311.765 )
-scale = Vector2( 1.25, 1.25 )
+position = Vector2( 231.973, 325.52 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="Dog" parent="." instance=ExtResource( 11 )]
 position = Vector2( 337.416, 380.423 )

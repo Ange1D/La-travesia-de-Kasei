@@ -71,7 +71,7 @@ animations = [ {
 "name": "05",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ null, ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "01",
 "speed": 5.0
@@ -92,7 +92,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Shader" id=15]
+[sub_resource type="Shader" id=17]
 code = "/*
 Shader from Godot Shaders - the free shader library.
 godotshaders.com/shader/god-rays
@@ -202,7 +202,7 @@ void fragment()
 }"
 
 [sub_resource type="ShaderMaterial" id=16]
-shader = SubResource( 15 )
+shader = SubResource( 17 )
 shader_param/angle = 0.303
 shader_param/position = 0.216
 shader_param/spread = 0.384
@@ -227,7 +227,7 @@ shape = SubResource( 1 )
 position = Vector2( -1.00182, -1.20136 )
 scale = Vector2( 0.319755, 0.319755 )
 frames = SubResource( 14 )
-animation = "04"
+animation = "01"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
