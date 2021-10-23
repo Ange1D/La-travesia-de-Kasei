@@ -20,6 +20,13 @@ func _physics_process(_delta):
 				$VBoxContainer2/Sprite2.visible=true
 			else:
 				$VBoxContainer2/Sprite2.visible=false
+		3:
+			$VBoxContainer2/Sprite.visible=true
+			$VBoxContainer2/Sprite2.visible=true
+			if Global.object==true:
+				$VBoxContainer2/Sprite3.visible=true
+			else:
+				$VBoxContainer2/Sprite3.visible=false
 
 	if $TextureProgress.value<= 0:
 		level.stopMusic()
