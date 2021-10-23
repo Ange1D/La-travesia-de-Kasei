@@ -3,6 +3,7 @@ extends CanvasLayer
 onready var player = get_tree().get_nodes_in_group("Player")[0] 
 onready var dog = get_tree().get_nodes_in_group("Dog")[0] 
 onready var level = get_tree().get_nodes_in_group("Nivel")[0] 
+var obj = false
 
 # Called when the node enters the scene tree for the first time.
 func _physics_process(_delta):
@@ -11,10 +12,14 @@ func _physics_process(_delta):
 		1:
 			if Global.object==true:
 				$VBoxContainer2/Sprite.visible=true
+			else:
+				$VBoxContainer2/Sprite.visible=false
 		2:
 			$VBoxContainer2/Sprite.visible=true
 			if Global.object==true:
 				$VBoxContainer2/Sprite2.visible=true
+			else:
+				$VBoxContainer2/Sprite2.visible=false
 
 	if $TextureProgress.value<= 0:
 		level.stopMusic()
@@ -25,6 +30,10 @@ func _physics_process(_delta):
 				$AudioStreamPlayer.play()
 		if is_instance_valid(dog):
 			dog.queue_free()
+			
+	if  obj == false && Global.object==true && not $AudioObj.playing:
+		$AudioObj.play()
+		obj = true
 
 
 func _on_Timer_timeout():
@@ -32,6 +41,7 @@ func _on_Timer_timeout():
 
 
 func _on_Button_pressed():
+	Global.object=false
 	$AudioStreamPlayer.stop()
 	get_tree().call_deferred("reload_current_scene")
 

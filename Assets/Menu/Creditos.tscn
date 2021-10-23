@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Menu/btn_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Menu/Sprite/Pantalla_inicio.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Menu/Music/PantallaInicial.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Assets/GUI/Fonts/timeout.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Assets/GUI/Fonts/Boxfont Round.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Menu/Creditos.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 10
+outline_color = Color( 0.603922, 0.584314, 1, 1 )
+extra_spacing_bottom = 10
+extra_spacing_char = 2
+font_data = ExtResource( 5 )
+
+[node name="Creditos" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -558.784, -71.6991 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -14.1421, -1.41418 )
+scale = Vector2( 1.41939, 1.41939 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 1014.0
+margin_bottom = 123.0
+custom_fonts/font = ExtResource( 4 )
+text = "Gracias por jugar"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -346.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+margin_right = 1004.0
+margin_bottom = 272.0
+custom_fonts/font = SubResource( 1 )
+text = "Cincibeles:  Diseno de interfaces y  niveles.
+Levy:  Musica y efectos de sonido.
+AmadeusLight:  Sprites y diseno de personajes.
+OctavioJQ:  Diseno de objetos y fondos parallax
+MOG1WARA:  Programacion."
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 276.0
+margin_right = 1004.0
+margin_bottom = 346.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_hover = Color( 0.941176, 0.780392, 0.34902, 1 )
+text = "Menu Principal"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_Button2_pressed"]

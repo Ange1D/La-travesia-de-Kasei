@@ -41,7 +41,10 @@ script = ExtResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -40.8361, -2.00226 )
 frames = SubResource( 1 )
-animation = "Sit"
+animation = "Run"
+frame = 1
+playing = true
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -43.1614, -27.6619 )

@@ -7,6 +7,7 @@ func _ready():
 	$Position2D2/AnimationPlayer.play("move")
 	$Position2D3/AnimationPlayer.play("move")
 	$Position2D4/AnimationPlayer.play("move")
+	$Position2D5/AnimationPlayer.play("Running")
 
 
 func stopMusic():

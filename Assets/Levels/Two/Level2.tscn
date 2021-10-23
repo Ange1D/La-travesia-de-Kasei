@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/GUI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Characters/Level/Objects/Objects.tscn" type="PackedScene" id=2]
@@ -19,6 +19,22 @@
 [ext_resource path="res://Assets/Levels/Two/Level2.gd" type="Script" id=17]
 [ext_resource path="res://Assets/Levels/Two/Music/Pieza2.mp3" type="AudioStream" id=18]
 [ext_resource path="res://Assets/Levels/Two/Music/PlataformaGiratoria.mp3" type="AudioStream" id=19]
+
+[sub_resource type="Animation" id=5]
+resource_name = "Running"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Dog:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2.3, 3.4, 4.5, 5.5, 6.5, 7.8, 9.4, 11, 12.3, 13.5, 15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 337.673, 377.937 ), Vector2( 509.617, 280.829 ), Vector2( 764.681, 254.815 ), Vector2( 920.321, 410.9 ), Vector2( 1168.56, 305.186 ), Vector2( 1407.54, 218.284 ), Vector2( 1676.49, 396.583 ), Vector2( 1900.48, 275.22 ), Vector2( 2036.08, 132.881 ), Vector2( 2364.96, 395.085 ), Vector2( 2597.2, 228.773 ), Vector2( 2908.84, 253.495 ), Vector2( 3088.64, 297.695 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "move"
@@ -172,9 +188,14 @@ autoplay = true
 position = Vector2( 220.342, 311.765 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Dog" parent="." instance=ExtResource( 5 )]
-position = Vector2( 337.416, 380.423 )
+[node name="Position2D5" type="Position2D" parent="."]
+
+[node name="Dog" parent="Position2D5" instance=ExtResource( 5 )]
+position = Vector2( 337.673, 377.937 )
 scale = Vector2( 0.75, 0.75 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Position2D5"]
+anims/Running = SubResource( 5 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 
@@ -214,7 +235,7 @@ anims/move = SubResource( 3 )
 position = Vector2( 18, 0 )
 
 [node name="mountain" parent="Position2D" instance=ExtResource( 7 )]
-position = Vector2( 2012.04, 281.601 )
+position = Vector2( 1978.39, 313.385 )
 rotation = 3.82882
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Position2D"]

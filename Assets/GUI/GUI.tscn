@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/Menu/title_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/GUI/Sprites/barTime2.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Characters/Level/Objects/Xolo.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Characters/Level/Objects/Huaraches_Bronce.png" type="Texture" id=11]
 [ext_resource path="res://Assets/GUI/Sounds/Perder.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Characters/Level/Objects/RecogerObjeto.mp3" type="AudioStream" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -243,6 +244,10 @@ texture = ExtResource( 8 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+
+[node name="AudioObj" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -2.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

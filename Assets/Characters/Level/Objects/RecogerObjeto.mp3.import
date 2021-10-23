@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/RecogerObjeto.mp3-1a590a48f19da9b8a07ca7111341d64d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Characters/Level/Objects/RecogerObjeto.mp3"
+dest_files=[ "res://.import/RecogerObjeto.mp3-1a590a48f19da9b8a07ca7111341d64d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

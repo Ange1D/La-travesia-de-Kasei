@@ -1,5 +1,7 @@
 extends Area2D
 
+onready var dog = get_tree().get_nodes_in_group("Dog")[0] 
+
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Player") && Global.object==true:
 		match(Global.level):
@@ -10,11 +12,15 @@ func _on_Area2D_body_entered(body):
 			2:
 				Global.level=1
 				Global.object=false
-				get_tree().call_deferred("change_scene", "res://Assets/Menu/Menu.tscn")
+				get_tree().call_deferred("change_scene", "res://Assets/Menu/Creditos.tscn")
 	elif body.is_in_group("Player") && Global.object==false:
 		$Sprite.visible=true
 		if(not $AudioStreamPlayer.playing):
 			$AudioStreamPlayer.play()
+			
+	if body.is_in_group("Dog"):
+		if is_instance_valid(dog):
+			dog.queue_free()
 
 
 
