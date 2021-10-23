@@ -106,6 +106,8 @@ shape = SubResource( 19 )
 
 [node name="Run" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = -3.0
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -3.0

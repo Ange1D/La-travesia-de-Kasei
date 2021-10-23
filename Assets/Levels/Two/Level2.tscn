@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/GUI/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Characters/Level/Objects/Objects.tscn" type="PackedScene" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Levels/Two/mountain.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Levels/One/Sprites/Tileset.tres" type="TileSet" id=8]
 [ext_resource path="res://Assets/Characters/Level/Objects/ovalo.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Levels/One/Music/Pieza3_Rio.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Levels/One/Music/Reloj_Faltan20Segundos.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Levels/Two/Sprites/Fondo_05.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Levels/One/Sprites/backgrounda6.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Levels/Two/Sprites/Fondo_02.png" type="Texture" id=13]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Assets/Levels/Two/Sprites/Fondo_01.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Levels/Two/Sprites/Fondo_04.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Levels/Two/Level2.gd" type="Script" id=17]
+[ext_resource path="res://Assets/Levels/Two/Music/Pieza2.mp3" type="AudioStream" id=18]
+[ext_resource path="res://Assets/Levels/Two/Music/PlataformaGiratoria.mp3" type="AudioStream" id=19]
 
 [sub_resource type="Animation" id=2]
 resource_name = "move"
@@ -162,7 +164,8 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 18 )
+volume_db = -6.0
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
@@ -225,3 +228,17 @@ rotation = 4.6633
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Position2D2"]
 anims/move = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="AudioPlataform" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -3.0
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

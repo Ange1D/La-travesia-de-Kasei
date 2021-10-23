@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Menu/btn_dynamicfont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Assets/Menu/Menu.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Assets/Menu/Sprite/Pantalla_inicio.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Menu/Sprite/boton.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Menu/Music/IniciarPartida.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Menu/Sprite/Boton_abajo.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Menu/Sprite/titilo.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Menu/Sprite/personajes.png" type="Texture" id=11]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -29,6 +32,14 @@ material = SubResource( 1 )
 scale = Vector2( 1.37918, 1.37918 )
 texture = ExtResource( 6 )
 centered = false
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 510.661, 415.31 )
+texture = ExtResource( 10 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 495.226, 197.556 )
+texture = ExtResource( 11 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
@@ -80,6 +91,7 @@ margin_top = 429.903
 margin_right = 586.617
 margin_bottom = 476.903
 texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

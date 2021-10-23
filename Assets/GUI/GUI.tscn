@@ -169,26 +169,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -471.5
-margin_top = -51.5
-margin_right = 471.5
-margin_bottom = 51.5
+margin_left = -505.0
+margin_top = -125.5
+margin_right = 505.0
+margin_bottom = 125.5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 943.0
+margin_right = 1010.0
 margin_bottom = 103.0
 custom_fonts/font = ExtResource( 6 )
-text = "Se termino el tiepo"
+text = "Se termino el tiempo"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 margin_top = 107.0
-margin_right = 943.0
+margin_right = 1010.0
 margin_bottom = 177.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_hover = Color( 0.941176, 0.780392, 0.34902, 1 )
@@ -197,7 +197,7 @@ flat = true
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 margin_top = 181.0
-margin_right = 943.0
+margin_right = 1010.0
 margin_bottom = 251.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_hover = Color( 0.941176, 0.780392, 0.34902, 1 )

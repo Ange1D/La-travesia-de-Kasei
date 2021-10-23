@@ -12,5 +12,13 @@ func _on_Area2D_body_entered(body):
 				Global.object=false
 				get_tree().call_deferred("change_scene", "res://Assets/Menu/Menu.tscn")
 	elif body.is_in_group("Player") && Global.object==false:
-		$Label.visible=true
+		$Sprite.visible=true
+		if(not $AudioStreamPlayer.playing):
+			$AudioStreamPlayer.play()
 
+
+
+func _on_Area2D_body_exited(body):
+	if body.is_in_group("Player") && Global.object==false:
+		$Sprite.visible=false
+		
